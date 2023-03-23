@@ -7,17 +7,16 @@ export type ItemType = {
   price: number;
   maximumPurchases: number;
   registrationDate: string;
-};
-
-export type savedItemType = {
-  idx: number;
-  name: string;
-  price: number;
-  maximumPurchases: number;
   quantity: number;
 };
 
-export type toSavedItemType = Pick<
-  ItemType,
-  "idx" | "name" | "price" | "maximumPurchases"
->;
+export interface ItemsState {
+  items: [];
+  status: "pending" | "succeeded" | "failed";
+}
+
+export interface SavedItemsState {
+  savedItems: ItemType[];
+  totalQuantity: number;
+  totalAmount: number;
+}
